@@ -16,6 +16,14 @@ def lambda_handler(event, context):
 
         print(f"Triggered by file: {object_key}")
 
+        # Skip already processed summary files
+        if "_summary" in object_key:
+            print(f"Skipping already processed file: {object_key}")
+            return {
+                'statusCode': 200,
+                'body': json.dumps('Skipped already processed summary file')
+            }
+
         # Get the text file content
         response = s3_client.get_object(Bucket=bucket_name, Key=object_key)
         text = response['Body'].read().decode('utf-8')
