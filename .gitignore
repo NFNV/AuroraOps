@@ -1,3 +1,54 @@
-.terraform/
-.terraform.lock.hcl
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.env
 .env
+.venv/
+venv/
+pip-wheel-metadata/
+*.egg-info/
+
+# AWS credentials
+*.pem
+*.key
+*.crt
+*.csr
+
+# Terraform
+*.tfstate
+*.tfstate.*
+*.terraform/
+.terraform.lock.hcl
+crash.log
+override.tf
+override.tf.json
+terraform.tfvars
+terraform.tfvars.json
+*.backup
+
+# Lambda Deployment Packages
+lambda_function_payload.zip
+
+# Hugging Face
+token_*
+
+# System
+.DS_Store
+Thumbs.db
+ehthumbs.db
+*.bak
+
+# Logs
+*.log
+
+# IDE configs
+.vscode/
+.idea/
+
+# Misc
+*.zip
+*.tar.gz
+*.swp
